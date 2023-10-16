@@ -1,0 +1,64 @@
+html {
+    background-color: black;
+}
+
+body {
+    background-color: yellow;
+    width: 1200px;
+    margin: 20px auto;
+    border-radius: 15px 15px 15px 15px;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+header img {
+    display: block;
+    margin: 0px auto;
+    width: 40%;
+}
+
+nav {
+    background-color: cyan;
+    padding: 1px;
+    text-align: center;
+}
+
+nav a {
+    color: #731F35;
+    font-size: 20px;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: yellow;
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+main img {
+    display: block;
+    margin: 20px;
+    width: 50%;
+}
+
+footer {
+    background-color: cyan;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 0 0 15px 15px;
+}
+
+h2,h3 {
+    color: #731F35;
+    text-decoration: underline;
+}
+
+hr {
+    background-color: #731F35;
+}
