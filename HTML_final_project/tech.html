@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Fortress 2 - technology</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <img src="images/Pyroland_Logo.png" alt="Main Site logo">
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="maps.html">Maps</a></li>
+                <li><a href="friends.html">Compaions</a></li>
+                <li><p>Technical</p></li>
+                <li><a href="mods.html">Community</a></li>
+            </ul>
+        </nav>
+        <main>
+            
+            <section class="single">
+                <h1>Magic isn't built in a day...</h1>
+                <p>In all seriousness Pyrovision is a facinating and impressive graphical effect that is very optimized for only apearing in 9 of the over 100 maps featured in TF2 today. It's most effective in how the Source engine is able to seamlessly replace almost every single map texture and apply a custom shader to the Source Engine's prebaked lighting data.</p>
+                <img src="images/Pyrovision_2fort.jpeg" alt="2fort in Pyrovision">
+
+                <h3>The following information was lifted directly from Vavle's offical developer wiki.</h3>
+                <p>"When a material is loaded, it attempts to find a replacements.vmt file in that directory. If it doesn’t find one in that immediate directory, it will attempt to find one going up in the directory hierarchy through the materials directory. Both the original material and the replacement material are fully loaded, so you should be cautious about how many new textures are introduced via the replaced material.</p>
+
+                <p>The replacements.vmt file is split into two sections: patterns and templates. Patterns represent a partial material name match. If a match is found, the template specified will point to a name in the template section for the alternate material. Within each template, you must specify a sub section which represents the original source shader type. Under that, you specify the replaced shader type and the parameters associated with it."</p>
+
+                <h3>Patterns</h3>
+                <p>Patterns represent a sequence list of starting name matches. The replacement system will sequentially scan down the list until a name pattern matches. Thus, you can put very specific material name matches higher up in the list and general name matches later on. For example:</p>
+                <code>
+                    patterns<br>
+                    {<br>
+                        concretewall001d	<i>// matches concretewall001d*</i><br>
+                        {<br>
+                            template	"peach02"<br>
+                        }<br>
+                        concretewall012d	<i>// matches concretewall012d*</i><br>
+                        {<br>
+                            template	"pink01"<br>
+                        }<br>
+                        concretewall		<i>// matches concretewall* ( except if matched by what is above )</i><br>
+                        {<br>
+                            template	"blue01"<br>
+                        }
+                    }
+                </code>
+                <p>A material named "concretewall001d" or "concretewall001dnew" would get mapped to "peach02", "concretewall012d" would to mapped to "pink01" and anything else that begins with "concretewall" would get matched to "blue01".</p>
+                <h3>Templates</h3>
+                <p>Templates specify the replacement definition for the material. Under each template name you specify the shader type that is replaced. This allows you to have one template which can handle multiple shader sources, such as both VertexLitGeneric and LightmappedGeneric. Under each shader type, you specify a brand new shader definition. For Pyrovision, most new shaders are of type pyro_vision, though in reality it can be an type of shader that can handle the incoming vertex format from the source shader.</p>
+                <p>Parameters that you specify can both be your own custom values. If you specify a value that starts with a dollar sign, it will attempt to use that as a source field to copy over the value from the original material definition. Finally, if you specify a key of "$copyall" with any value, it will copy all source material parameters down.</p>
+                <code>
+                    templates<br>
+                    {<br>
+                    peach02	// template name<br>
+	                    {<br>
+		                    "LightmappedGeneric"	<i>// source shader type for LightmappedGeneric</i><br>
+		                    {<br>
+			                    pyro_vision		<i>// new replaced shader type and material definition</i><br>
+			                    {<br>
+				                    $basetexture			$basetexture<br>
+				                    $vertexcolor			$vertexcolor<br>
+                                    <br>
+			                	    $EFFECT				1<br>
+				                    $COLORBAR				"rj/colorbar_peach02"<br>
+                                    <br>
+				                    $DIFFUSE_WHITE			0.5<br>
+			                	    $GRAY_POWER				0.8<br>
+				                    $GRAY_STEP				"[ 0.0 1.0 ]"<br>
+			                	    $LIGHTMAP_GRADIENTS		255<br>
+			                    }
+		                    }<br>
+		                    "VertexLitGeneric"	<i>// source shader type for VertexLitGeneric</i><br>
+	                	    {<br>
+		                	    pyro_vision<br>
+		                	    {<br>
+	                			    $EFFECT				1<br>
+		                		    $VERTEX_LIT				1<br>
+                                    <br>
+		                		    $basetexture			"pyroconcretewall"<br>
+		                		    $vertexcolor			$vertexcolor<br>
+                                    <br>
+		                		    $EFFECT				1<br>
+		                		    $COLORBAR				"rj/colorbar_patch02"<br>
+                                    <br>
+		                		    $DIFFUSE_WHITE			0.5<br>
+		                		    $DIFFUSE_BASE			0.1<br>
+		                		    $GRAY_POWER				0.4<br>
+		                  		    $GRAY_STEP				"[ 0.0 1.0 ]"<br>
+		                		    $LIGHTMAP_GRADIENTS		255<br>
+		                	    }
+	                	    }
+                    	}
+                   }
+                </code>
+            </section>
+        </main>
+        
+        <div class="low">
+            <div class="col">
+                <h3>Home</h3>
+                <img class="nav" src="images/pyro_lolichop.png" alt="The Pyro holding a Lolichop above their head.">
+                <p>Return to the home page here.</p>
+                <a class="button" href="index.html">Read More...</a>
+            </div>
+
+            <div class="col">
+                <h3>Maps</h3>
+                <img class="nav" src="images/PyroLand.png" alt="2Fort in Pyrovision">
+                <p>There are many sights to see in Pyroland, but how far does the territory reach?</p>
+                <a class="button" href="maps.html">Read More...</a>
+            </div>
+
+            <div class="col">
+                <h3>Compaions</h3>
+                <img class="nav" src="images/Balloonicorn.png" alt="Balloonicon(Mayor of Pyroland)">
+                <p>With how joyful and exciting Pyroland can be it's only natural you'd like to share the fun with a small little friend.</p>
+                <a class="button" href="friends.html">Read More...</a>
+            </div>
+
+            <div class="col">
+                <h3>Community Modifications</h3>
+                <img class="nav" src="images/upward_2c.jpg">
+                <p>A number of modder projects have extented the scope of Pyrovision.</p>
+                <a class="button" href="mods.html">Read More...</a>
+            </div>
+        </div>
+        <footer>
+            &copy; 2023 Valve Corporation
+        </footer>
+    </div>
+</body>
+
+</html>

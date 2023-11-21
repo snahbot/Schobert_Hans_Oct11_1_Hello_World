@@ -1,0 +1,293 @@
+body {
+    background-image: url("../images/doomsday_ortho4.jpg");
+    background-color: #D9C1C7;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.wow {
+    width:0%;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+nav {
+    background-color: #D982AB;
+    padding: 2px 0;
+    text-align: center;
+    border-radius: 5px;
+    background-image: url("../images/Rainbow.png");
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    display: block;
+    padding-bottom: 4px;
+    padding-right: 5px;
+}
+
+nav li a {
+    display: block;
+    background-color: #ffe0e8;
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #71CED9;
+    text-decoration: none;
+    border: 5px solid #5c3943;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+nav li a:hover {
+    background-color: #F2EEB3;
+    color: #D9A86C;
+    border: 5px solid #644d31;
+}
+
+nav li p {
+    display: block;
+    background-color: #D982AB;
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #3a7c85;
+    text-decoration: none;
+    border: 5px solid #30191f;
+    border-radius: 15px;
+    margin: 0 auto;
+}
+
+main {
+    padding: 10px;
+}
+
+aside {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+aside p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+article img {
+    width: 50%;
+}
+
+i {
+    font-size: small;
+}
+
+table, td, tr {
+    border: 4px solid #D9C1C7;
+    border-collapse: collapse;
+    background-color: #D982AB;
+}
+
+th {
+    background-color: #D9C1C7;
+}
+
+td {
+    background-color: #D982AB;
+    background-image: url("../images/Rainbow.png");
+    text-align: center;
+}
+
+#team {
+    display: block;
+}
+
+#team th {
+    background-color: #D982AB;
+    background-image: url("../images/Rainbow.png");
+    padding: 5px;
+}
+
+#team td {
+    display: inline-block;
+    background-image: none;
+    background-color: #D9C1C7;
+    border: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+code {
+    color: #D9A86C;
+    background-color: #F2EEB3;
+    padding: 2px;
+    font-size: 105%;
+    text-align: justify;
+}
+
+code i {
+    color: green;
+}
+
+.col {
+    padding: 10px;
+    margin-bottom: 2px;
+    border: 5px solid #30191f;
+    border-radius: 10px;
+    background-image: url("../images/Rainbow.png");
+}
+
+.col img {
+   height: 180px;
+   width: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0px;
+    color: #bba4aa;
+    font-weight: bold;
+}
+
+.button {
+    display: block;
+    width: 110px;
+    height:15px;
+    line-height: 15px;
+    background-color: #D982AB;
+    color: white;
+    text-decoration: none;
+    margin: auto;
+    padding: 10px 5px;
+    text-align: left;
+    border: 4px solid #5c3943;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #D9A86C;
+    color: #F2EEB3;
+    border: 4px solid #644d31;
+}
+
+@media (min-width: 768px) {
+
+    #container {
+        width: 85%;
+        margin: 20px auto;
+    }
+
+    nav li {
+        display: inline-block;
+    }
+
+    nav li a {
+        width: 300px;
+        margin: 0 5px;
+    }
+
+    nav li p {
+        width: 300px;
+        margin: 0 5px;
+    }
+
+    main {
+        display: flex;
+    }
+
+    main img {
+        width: 75%;
+    }
+
+    .wow {
+        width:80%;
+    }
+
+    section {
+        width: 70%;
+        margin: 10px;
+    }
+
+    aside {
+        width: 30%;
+        margin: 10px;
+    }
+
+    #IPS {
+        width: 50%;
+    }
+
+    #quote {
+        width: 30%;
+        text-align: right;
+    }
+
+    #qoute p {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    }
+
+    .single {
+        width: 100%;
+        display: inline;
+    }
+
+    .low {
+        display: inline-block;
+    }
+
+    .col {
+        border-radius: 10px;
+        margin: auto;
+        margin-bottom: 5px;
+        padding: 10px;
+        width: 80%;
+    }
+
+    .col img {
+        height: 200px;
+        width: auto;
+     }
+
+     .button {
+        vertical-align: -50px;
+     }
+}
+
+@media (min-width: 1024px) {
+  
+    nav {
+        width: fit-content;
+        background-size: 100%;
+    }
+
+    .wow {
+        width:35%;
+    }
+
+    .low {
+        display: flex;
+    }
+
+    .col {
+        width: 30%;
+        margin: 10px;
+    }
+
+    article img {
+        width: 25%;
+    }
+}
