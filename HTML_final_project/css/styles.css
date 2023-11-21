@@ -95,6 +95,12 @@ i {
     font-size: small;
 }
 
+video {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 table, td, tr {
     border: 4px solid #D9C1C7;
     border-collapse: collapse;
