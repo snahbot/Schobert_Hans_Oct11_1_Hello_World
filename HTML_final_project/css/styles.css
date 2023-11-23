@@ -289,9 +289,14 @@ footer {
     }
 
     .col {
-        width: 30%;
+        width: 25%;
         margin: 10px;
     }
+
+    .col img {
+        height: auto;
+        width: 100%;
+     }
 
     article img {
         width: 25%;
